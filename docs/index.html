@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+
+  <title>Laporan Praktikum</title>
+</head>
+<body class="rapi">
+  <div class="container">
+    <h1>LAPORAN TEORI</h1>
+    <h2>Tyesha Bella Marrisa Simamora | 202331124</h2>
+
+    <h3 onclick="toggleContent(this)">Mengapa Menggunakan CSS, dan JavaScript?</h3>
+    <div class="garis"></div>
+    <p class="content">CSS digunakan untuk mengatur tampilan dan layout halaman web. Dengan CSS, pengembang dapat mengontrol warna, font, spasi, dan tata letak elemen HTML. JavaScript adalah bahasa pemrograman yang digunakan untuk menambahkan interaktivitas pada halaman web. Ini memungkinkan elemen halaman untuk bereaksi terhadap input pengguna.</p>
+
+    <h3 onclick="toggleContent(this)">Bagaimana CSS, dan JavaScript Diintegrasikan?</h3>
+    <div class="garis"></div>
+    <p class="content">Integrasi HTML, CSS, dan JavaScript memungkinkan web menjadi dinamis. Semua elemen web ditentukan dan diatur di dalam HTML untuk menjadi dasar dari sebuah halaman. CSS dihubungkan dengan HTML menggunakan tag "link" pada bagian "head" dari dokumen HTML atau ditambahkan langsung di dalam tag "style". JavaScript dapat ditempatkan dalam file terpisah atau di dalam tag "script" di HTML</p>
+    
+    <h3 onclick="toggleContent(this)">Jelaskan apa saja keuntungan menggunakan JavaScipt dan CSS?</h3>
+    <div class="garis"></div>
+    <p class="content">JavaScript memungkinkan pengembang untuk menambahkan elemen interaktif dan dinamis pada halaman web. Misalnya, fitur seperti slideshow gambar, menu dropdown, dan validasi formulir dapat diimplementasikan dengan mudah menggunakan JavaScript, meningkatkan pengalaman pengguna secara keseluruhan. CSS memungkinkan pengembang untuk menciptakan desain yang estetis dan menarik untuk situs web. Dengan CSS, elemen-elemen dapat ditata dengan cara yang membuat konten lebih mudah dibaca dan dinikmati oleh pengguna </p>
+    
+    <h3 onclick="toggleContent(this)">Jealskan apa saja keuntungan menggunakan Bootstrap?</h3>
+    <div class="garis"></div>
+    <p class="content">BootStrap adalah framework CSS, HTML, dan JavaScript yang dirancang untuk mempermudah pembuatan website responsif dan mobile-friendly.</p>
+    
+    <h3 onclick="toggleContent(this)">Berikan salah satu contoh penggunaan Bootstrap lalu jelaskan apa fungsinya serta berikan screenshot hasil running di web-nya!</h3>
+    <div class="garis"></div>
+    <div class="content">
+      <img src="No. 5.png" alt="Foto no 5">
+      <h4>Penjelasan:</h4>
+      <p>•	table table-striped: Kelas ini diterapkan pada elemen "table" untuk memberikan efek striped atau baris bergaris yang bergantian warna, sehingga data lebih mudah dibaca.</p>
+      <p>•	thead: Bagian ini mendefinisikan header tabel dengan tiga kolom, yaitu "Name," "Age," dan "Occupation."</p>
+      <p>•	tbody: Menampung data untuk setiap baris, dengan setiap atribut ditempatkan di kolom yang sesuai. </p>
+    </div>
+
+    <button class="toggle-button" onclick="toggleMode()">
+      Ubah Mode Tampilan
+      <span class="toggle-icon">🔄</span>
+    </button>
+  </div>
+
+  <script>
+    function toggleContent(element) {
+      let nextElement = element.nextElementSibling;
+
+      while (nextElement && !nextElement.classList.contains("content")) {
+        nextElement = nextElement.nextElementSibling;
+      }
+
+      if (nextElement) {
+        const isHidden = nextElement.classList.contains("hidden");
+
+        const confirmMessage = isHidden 
+          ? "Apakah ingin menampilkan konten ini kembali?" 
+          : "Ingin menyembunyikan konten ini?";
+        const confirmAction = confirm(confirmMessage);
+
+        if (confirmAction) {
+          nextElement.classList.toggle("hidden");
+          element.classList.toggle("active");
+        }
+      }
+    }
+
+    function toggleMode() {
+      document.body.classList.toggle("berantakan");
+      document.body.classList.toggle("rapi");
+    }
+  </script>
+</body>
+</html>
